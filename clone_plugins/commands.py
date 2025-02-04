@@ -1,5 +1,5 @@
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 import os
@@ -23,7 +23,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 def get_size(size):
@@ -38,7 +38,7 @@ def get_size(size):
     return "%.2f %s" % (size, units[i])
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -48,7 +48,7 @@ async def start(client, message):
         await clonedb.add_user(me.id, message.from_user.id)
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@DB_ANNA')
         ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
         ],[
@@ -64,7 +64,7 @@ async def start(client, message):
         return
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
     
     data = message.command[1]
@@ -101,7 +101,7 @@ async def start(client, message):
         pass
         
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.command('api') & filters.private)
@@ -122,7 +122,7 @@ async def shortener_api_handler(client, m: Message):
         await m.reply("You are not authorized to use this command.")
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.command("base_site") & filters.private)
@@ -144,7 +144,7 @@ async def base_site_handler(client, m: Message):
         await m.reply("You are not authorized to use this command.")
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 
@@ -155,7 +155,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@DB_ANNA')
             ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
             ],[
@@ -176,7 +176,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
     elif query.data == "help":
@@ -216,5 +216,5 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )  
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
