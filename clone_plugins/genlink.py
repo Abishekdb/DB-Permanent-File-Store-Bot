@@ -1,5 +1,5 @@
 # Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot @DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 import re
@@ -8,7 +8,7 @@ from clone_plugins.users_api import get_user, get_short_link
 import base64
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.command(['link']))
@@ -21,7 +21,7 @@ async def gen_link_s(client: Client, message):
         return await message.reply("Reply to a supported media")
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
     
     file_id = getattr(replied, file_type.value).file_id
@@ -41,6 +41,6 @@ async def gen_link_s(client: Client, message):
 
 
 # Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
     
