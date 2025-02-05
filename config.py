@@ -65,7 +65,7 @@ VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link
 WEBSITE_URL_MODE = bool(environ.get('WEBSITE_URL_MODE', True)) # Set True or False
 
 # If Website Url Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
-WEBSITE_URL = environ.get("WEBSITE_URL", "https://abishekdb.github.io/file-store-site/") # For More Information Check Video On Yt - @DB_ANNA
+WEBSITE_URL = environ.get("WEBSITE_URL", "https://abishekdb.github.io/DEMO-SITE/") # For More Information Check Video On Yt - @DB_ANNA
 
 # File Stream Config
 STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set True or False
