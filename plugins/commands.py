@@ -43,17 +43,18 @@ def get_size(size):
 def formate_file_name(file_name):
     chars = ["[", "]", "(", ")"]
     for c in chars:
-        file_name.replace(c, "")
+        file_name = file_name.replace(c, "")  # FIX: was `file_name.replace(c, "")` without reassigning
     file_name = '@VJ_Botz ' + ' '.join(filter(lambda x: not x.startswith('http') and not x.startswith('@') and not x.startswith('www.'), file_name.split()))
     return file_name
 
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
-# Ask Doubt on telegram @KingVJ0
+# Ask Doubt on telegram @KingVJ01
 
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
+    username = (await client.get_me()).username  # FIX: was missing, caused NameError when used below
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
