@@ -19,7 +19,7 @@ async def get_short_link(user, link):
     print(user)
     response = requests.get(f"https://{base_site}/api?api={api_key}&url={link}")
     data = response.json()
-    if data["status"] == "success" or rget.status_code == 200:
+    if data["status"] == "success" or response.status_code == 200:
         return data["shortenedUrl"]
 
 # Don't Remove Credit Tg - @VJ_Botz
