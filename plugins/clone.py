@@ -3,14 +3,14 @@
 # Ask Doubt on telegram @KingVJ01
 
 import re
-from pymongo import MongoClient
+from motor.motor_asyncio import AsyncIOMotorClient
 from Script import script
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
 from config import API_ID, API_HASH, DB_URI, DB_NAME, CLONE_MODE
 
-mongo_client = MongoClient(DB_URI)
+mongo_client = AsyncIOMotorClient(DB_URI)
 mongo_db = mongo_client["cloned_vjbotz"]
 
 @Client.on_message(filters.command("clone") & filters.private)
@@ -46,7 +46,7 @@ async def clone(client, message):
             'token': bot_token,
             'username': bot.username
         }
-        mongo_db.bots.insert_one(details)
+        await mongo_db.bots.insert_one(details)
         await msg.edit_text(f"<b>sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʟᴏɴᴇᴅ ʏᴏᴜʀ ʙᴏᴛ: @{bot.username}.</b>")
     except BaseException as e:
         await msg.edit_text(f"⚠️ <b>Bot Error:</b>\n\n<code>{e}</code>\n\n**Kindly forward this message to @KingVJ01 to get assistance.**")
@@ -60,9 +60,9 @@ async def delete_cloned_bot(client, message):
         bot_token = re.findall(r'\d[0-9]{8,10}:[0-9A-Za-z_-]{35}', techvj.text, re.IGNORECASE)
         bot_token = bot_token[0] if bot_token else None
         bot_id = re.findall(r'\d[0-9]{8,10}', techvj.text)
-        cloned_bot = mongo_db.bots.find_one({"token": bot_token})
+        cloned_bot = await mongo_db.bots.find_one({"token": bot_token})
         if cloned_bot:
-            mongo_db.bots.delete_one({"token": bot_token})
+            await mongo_db.bots.delete_one({"token": bot_token})
             await message.reply_text("**🤖 ᴛʜᴇ ᴄʟᴏɴᴇᴅ ʙᴏᴛ ʜᴀs ʙᴇᴇɴ ʀᴇᴍᴏᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ʟɪsᴛ ᴀɴᴅ ɪᴛs ᴅᴇᴛᴀɪʟs ʜᴀᴠᴇ ʙᴇᴇɴ ʀᴇᴍᴏᴠᴇᴅ ғʀᴏᴍ ᴛʜᴇ ᴅᴀᴛᴀʙᴀsᴇ. ☠️**")
         else:
             await message.reply_text("**⚠️ ᴛʜᴇ ʙᴏᴛ ᴛᴏᴋᴇɴ ᴘʀᴏᴠɪᴅᴇᴅ ɪs ɴᴏᴛ ɪɴ ᴛʜᴇ ᴄʟᴏɴᴇᴅ ʟɪsᴛ.**")
@@ -74,7 +74,7 @@ async def delete_cloned_bot(client, message):
 # Ask Doubt on telegram @KingVJ01
 
 async def restart_bots():
-    bots = list(mongo_db.bots.find())
+    bots = await mongo_db.bots.find().to_list(length=None)
     for bot in bots:
         bot_token = bot['token']
         try:
