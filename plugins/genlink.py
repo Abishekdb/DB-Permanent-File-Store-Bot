@@ -39,7 +39,7 @@ async def incoming_gen_link(bot, message):
     user_id = message.from_user.id
     user = await get_user(user_id)
     if WEBSITE_URL_MODE == True:
-        share_link = f"{WEBSITE_URL}?DB_ANNA={outstr}"
+        share_link = f"{WEBSITE_URL}{outstr}"  # FIX: removed ?DB_ANNA=
     else:
         share_link = f"https://t.me/{username}?start={outstr}"
     if user["base_site"] and user["shortener_api"] != None:
@@ -67,7 +67,7 @@ async def gen_link_s(bot, message):
     user_id = message.from_user.id
     user = await get_user(user_id)
     if WEBSITE_URL_MODE == True:
-        share_link = f"{WEBSITE_URL}?DB_ANNA={outstr}"
+        share_link = f"{WEBSITE_URL}{outstr}"  # FIX: removed ?DB_ANNA=
     else:
         share_link = f"https://t.me/{username}?start={outstr}"
     if user["base_site"] and user["shortener_api"] != None:
@@ -136,7 +136,6 @@ async def gen_link_batch(bot, message):
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
 
-    # file store without db channel
     og_msg = 0
     tot = 0
     async for msg in bot.iter_messages(f_chat_id, l_msg_id, f_msg_id):
@@ -168,7 +167,7 @@ async def gen_link_batch(bot, message):
     user_id = message.from_user.id
     user = await get_user(user_id)
     if WEBSITE_URL_MODE == True:
-        share_link = f"{WEBSITE_URL}?DB_ANNA=BATCH-{file_id}"
+        share_link = f"{WEBSITE_URL}BATCH-{file_id}"  # FIX: removed ?DB_ANNA=
     else:
         share_link = f"https://t.me/{username}?start=BATCH-{file_id}"
     if user["base_site"] and user["shortener_api"] != None:
@@ -180,4 +179,3 @@ async def gen_link_batch(bot, message):
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@DB_ANNA
 # Ask Doubt on telegram @KingVJ01
-
